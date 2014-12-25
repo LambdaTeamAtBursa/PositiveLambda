@@ -8,6 +8,7 @@ require 'rails_helper'
 
      it { should belong_to(:creator).class_name(User) }
      it { should belong_to(:category).class_name(CyteCategory) }
+     it { should have_attributes(:tags)}
 
   end
 

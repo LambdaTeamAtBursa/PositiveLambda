@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223153928) do
+ActiveRecord::Schema.define(version: 20141225102109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,17 @@ ActiveRecord::Schema.define(version: 20141223153928) do
 
   add_index "cytes", ["category_id"], name: "index_cytes_on_category_id", using: :btree
   add_index "cytes", ["creator_id"], name: "index_cytes_on_creator_id", using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags_cytes", id: false, force: true do |t|
+    t.integer "tag_id"
+    t.integer "cyte_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
