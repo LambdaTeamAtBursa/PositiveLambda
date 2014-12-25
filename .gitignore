@@ -19,3 +19,6 @@ config/database.yml
 config/database.yml.sample
 public/*
 *.swp
+
+#rubymine
+.idea/
