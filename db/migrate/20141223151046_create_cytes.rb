@@ -5,7 +5,7 @@ class CreateCytes < ActiveRecord::Migration
       t.belongs_to :creator, class_name: User, index: true
       t.belongs_to :category, class_name: CyteCategory, index: true
 
-      t.timestamps null:false
+      t.timestamps null: false
     end
   end
 end

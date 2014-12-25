@@ -4,7 +4,7 @@ class CreateCyteCategories < ActiveRecord::Migration
       t.string :name
       t.belongs_to :parent_category, class_name: CyteCategory, index: true
 
-      t.timestamps null:false
+      t.timestamps null: false
     end
   end
 end
