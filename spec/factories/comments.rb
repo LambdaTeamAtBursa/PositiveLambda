@@ -1,7 +1,7 @@
 FactoryGirl.define do
 	
   factory :comment do
-    text { Faker::Lorem.words(rand(4..10)) }
+    text { Faker::Lorem.sentence }
     association :cyte
     association :user
   end
