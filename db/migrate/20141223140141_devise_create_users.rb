@@ -32,11 +32,11 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       ## PositiveLambda
       t.integer :role
-      t.string :name
+      t.string :name, null:false
       t.string :shown_name
 
 
-      t.timestamps
+      t.timestamps null:false
     end
 
     add_index :users, :email,                unique: true
