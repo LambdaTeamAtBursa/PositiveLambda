@@ -1,4 +1,5 @@
 # Positive Lambda
+[![Build Status](https://travis-ci.org/LambdaTeamAtBursa/PositiveLambda.svg?branch=develop)](https://travis-ci.org/LambdaTeamAtBursa/PositiveLambda)
 
 ### Функциональность сайта:
 
