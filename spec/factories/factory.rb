@@ -14,7 +14,11 @@ FactoryGirl.define do
     text { Faker::Lorem.sentence }
     association :creator, factory: :user
     association :category, factory: :cyte_category
-    tags {[FactoryGirl.create(:tag)]}
+
+    factory :cyte_with_tags do
+      after(:create) {|instance| create_list(:tag, 5)}
+    end
+
   end
 
   factory :tag do
