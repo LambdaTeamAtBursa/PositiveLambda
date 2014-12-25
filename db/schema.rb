@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223153928) do
+ActiveRecord::Schema.define(version: 20141224124625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "cyte_id"
+    t.integer  "parent_comment_id"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["cyte_id"], name: "index_comments_on_cyte_id", using: :btree
+  add_index "comments", ["parent_comment_id"], name: "index_comments_on_parent_comment_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "cyte_categories", force: true do |t|
     t.string   "name"
