@@ -11,10 +11,10 @@ FactoryGirl.define do
   end
 
   factory :cyte do
-    text { Faker::Lorem.characters(rand(4..30)) }
+    text { Faker::Lorem.sentence }
     association :creator, factory: :user
     association :category, factory: :cyte_category
-    association :tags, factory: :tags
+    tags {[FactoryGirl.create(:tag)]}
   end
 
   factory :tag do
@@ -30,6 +30,10 @@ FactoryGirl.define do
     text { Faker::Lorem.sentence }
     association :cyte
     association :user
+
+    factory :comment_with_parent_comment do
+      association :parent_comment, factory: :comment
+    end
   end
 
 end
