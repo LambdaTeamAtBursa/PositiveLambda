@@ -19,12 +19,14 @@ ActiveRecord::Schema.define(version: 20141224124625) do
   create_table "comments", force: true do |t|
     t.integer  "user_id"
     t.integer  "cyte_id"
+    t.integer  "parent_comment_id"
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "comments", ["cyte_id"], name: "index_comments_on_cyte_id", using: :btree
+  add_index "comments", ["parent_comment_id"], name: "index_comments_on_parent_comment_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "cyte_categories", force: true do |t|
