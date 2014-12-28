@@ -1,0 +1,8 @@
+class CreateTableTagsCytes < ActiveRecord::Migration
+  def change
+    create_table :table_tags_cytes do |t|
+      t.integer :cite_id
+      t.intager :tag_id
+    end
+  end
+end

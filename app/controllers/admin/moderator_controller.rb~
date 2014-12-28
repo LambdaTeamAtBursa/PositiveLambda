@@ -1,0 +1,4 @@
+class Admin::ModeratorController < ApplicationController
+  def index
+  end
+end

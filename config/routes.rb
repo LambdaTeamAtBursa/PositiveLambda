@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :admin do
+  get 'moderator/index'
+  end
+
   devise_for :users
   #get 'welcome/index'
   root 'welcome#index'
