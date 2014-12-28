@@ -20,5 +20,8 @@ config/database.yml.sample
 public/*
 *.swp
 
+#Ignore all temporary files
+*~
+
 #rubymine
 .idea/
