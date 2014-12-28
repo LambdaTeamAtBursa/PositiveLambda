@@ -37,6 +37,8 @@
 Жирков Антон - Kinnarts<br/>
 Панченко Вадим - antispin<br/>
 
+### Heroku link http://positivelambda.herokuapp.com/
+
 ### Database design [link](https://my.vertabelo.com/public-model-view/TEDeKvA3uXESdZJMjMu36dIAmP23cvTuM7lKkgZEZ7VptB5UUUdz3iHmAzIc4zDb?x=3312&y=3359&zoom=0.75)
 
 <iframe frameborder="1" height="300px" width="400px" src="https://my.vertabelo.com/v/TEDeKvA3uXESdZJMjMu36dIAmP23cvTuM7lKkgZEZ7VptB5UUUdz3iHmAzIc4zDb?x=3312&y=3359&zoom=0.75"></iframe>
