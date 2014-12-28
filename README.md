@@ -1,4 +1,5 @@
 # Positive Lambda
+[![Build Status](https://travis-ci.org/LambdaTeamAtBursa/PositiveLambda.svg?branch=develop)](https://travis-ci.org/LambdaTeamAtBursa/PositiveLambda)
 
 ### Функциональность сайта:
 
@@ -35,6 +36,8 @@
 Гураль Роман - 7Silvan<br/>
 Жирков Антон - Kinnarts<br/>
 Панченко Вадим - antispin<br/>
+
+### Heroku link http://positivelambda.herokuapp.com/
 
 ### Database design [link](https://my.vertabelo.com/public-model-view/TEDeKvA3uXESdZJMjMu36dIAmP23cvTuM7lKkgZEZ7VptB5UUUdz3iHmAzIc4zDb?x=3312&y=3359&zoom=0.75)
 

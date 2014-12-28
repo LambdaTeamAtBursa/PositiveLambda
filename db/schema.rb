@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141224124625) do
+ActiveRecord::Schema.define(version: 20141225102109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,19 +19,21 @@ ActiveRecord::Schema.define(version: 20141224124625) do
   create_table "comments", force: true do |t|
     t.integer  "user_id"
     t.integer  "cyte_id"
-    t.text     "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "parent_comment_id"
+    t.text     "text",              null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   add_index "comments", ["cyte_id"], name: "index_comments_on_cyte_id", using: :btree
+  add_index "comments", ["parent_comment_id"], name: "index_comments_on_parent_comment_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "cyte_categories", force: true do |t|
     t.string   "name"
     t.integer  "parent_category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_index "cyte_categories", ["parent_category_id"], name: "index_cyte_categories_on_parent_category_id", using: :btree
@@ -40,12 +42,23 @@ ActiveRecord::Schema.define(version: 20141224124625) do
     t.string   "text"
     t.integer  "creator_id"
     t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "cytes", ["category_id"], name: "index_cytes_on_category_id", using: :btree
   add_index "cytes", ["creator_id"], name: "index_cytes_on_creator_id", using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags_cytes", id: false, force: true do |t|
+    t.integer "tag_id",  null: false
+    t.integer "cyte_id", null: false
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -59,10 +72,10 @@ ActiveRecord::Schema.define(version: 20141224124625) do
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.integer  "role"
-    t.string   "name"
+    t.string   "name",                                null: false
     t.string   "shown_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
