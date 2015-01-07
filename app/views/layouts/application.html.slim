@@ -15,52 +15,22 @@ html
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        a.navbar-brand href="#"  Brand
+        a.navbar-brand href="#"  Positive Lambda
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav
-          li.active
-            a href="#"  Link
-          li
-            a href="#"  Link
-          li.dropdown
-            a.dropdown-toggle data-toggle="dropdown" href="#"
-              | Dropdown
-              strong.caret
-            ul.dropdown-menu
-              li
-                a href="#"  Action
-              li
-                a href="#"  Another action
-              li
-                a href="#"  Something else here
-              li.divider
-              li
-                a href="#"  Separated link
-              li.divider
-              li
-                a href="#"  One more separated link
+          li class=(current_page?(controller: '/home', action: 'info')?'active':'')
+            a href="/info"  About
         form.navbar-form.navbar-left role="search"
           .form-group
-            input.form-control type="text" /
-          button.btn.btn-default type="submit"  Submit
+            input.form-control type="text" placeholder="Input text for search" /
+          button.btn.btn-default type="submit" Search
         ul.nav.navbar-nav.navbar-right style="margin-right: 15px;"
-          li
-            a href="#"  Link
-          li.dropdown
-            a.dropdown-toggle data-toggle="dropdown" href="#"
-              | Dropdown
-              strong.caret
-            ul.dropdown-menu
-              li
-                a href="#"  Action
-              li
-                a href="#"  Another action
-              li
-                a href="#"  Something else here
-              li.divider
-              li
-                a href="#"  Separated link
-
+          - if (user_signed_in?)
+            li
+              = link_to t("sign_out"), destroy_user_session_path, method: :delete
+          - else
+            li
+              = link_to t("sign_in"), new_user_session_path, method: :get
     - if notice
       | p.alert.alert-success
         =notice
@@ -68,7 +38,7 @@ html
       | p.alert.alert-danger
         =alert
 
-    .container
+    .container style="margin-top:90px;"
       = yield
 
     /footer
