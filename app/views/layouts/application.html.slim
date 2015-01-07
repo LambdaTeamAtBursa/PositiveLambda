@@ -15,18 +15,22 @@ html
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        a.navbar-brand href="#"  Brand
+        a.navbar-brand href="#"  Positive Lambda
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav
-          li class=(current_page?(controller: 'home', action: 'info')?'active':'')
+          li class=(current_page?(controller: '/home', action: 'info')?'active':'')
             a href="/info"  About
         form.navbar-form.navbar-left role="search"
           .form-group
             input.form-control type="text" placeholder="Input text for search" /
           button.btn.btn-default type="submit" Search
         ul.nav.navbar-nav.navbar-right style="margin-right: 15px;"
-          li
-            = link_to t("sign_out"), destroy_user_session_path, method: :delete
+          - if (user_signed_in?)
+            li
+              = link_to t("sign_out"), destroy_user_session_path, method: :delete
+          - else
+            li
+              = link_to t("sign_in"), new_user_session_path, method: :get
     - if notice
       | p.alert.alert-success
         =notice
