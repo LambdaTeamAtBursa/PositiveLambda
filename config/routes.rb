@@ -3,17 +3,15 @@ Rails.application.routes.draw do
   get 'moderator/index'
   end
 
-  devise_for :users
-  #get 'welcome/index'
+  devise_for :users #, path_names: {sign_in: "login", sign_out: "logout", registration: 'register'}
+
   root 'welcome#index'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  #get 'welcome#info'
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  get 'info', :to => 'welcome#info'
 
-  # Example of regular route:
+# Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
