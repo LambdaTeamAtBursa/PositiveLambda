@@ -1,6 +1,6 @@
-.authform
+.authform.col-md-6.col-md-offset-3
   = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f|
-    h3
+    h3.text-center
       | Sign up
     = devise_error_messages!
     .form-group
@@ -15,4 +15,4 @@
     .form-group
       = f.label :password_confirmation
       = f.password_field :password_confirmation, class: 'form-control'
-    = f.submit 'Sign up', :class => 'button right'
+    = f.submit 'Sign up', :class => 'btn btn-default pull-right'
