@@ -27,10 +27,15 @@ html
         ul.nav.navbar-nav.navbar-right style="margin-right: 15px;"
           - if (user_signed_in?)
             li
+              a href="#"
+                = current_user.email
+            li
               = link_to t("sign_out"), destroy_user_session_path, method: :delete
           - else
             li
               = link_to t("sign_in"), new_user_session_path, method: :get
+          li
+            a href="/admin"  Admin
     - if notice
       | p.alert.alert-success
         =notice
