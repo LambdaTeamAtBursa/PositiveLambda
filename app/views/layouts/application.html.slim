@@ -18,7 +18,7 @@ html
         a.navbar-brand href="#"  Brand
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav
-          li
+          li class=(current_page?(controller: 'home', action: 'info')?'active':'')
             a href="/info"  About
         form.navbar-form.navbar-left role="search"
           .form-group

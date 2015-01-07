@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   devise_for :users #, path_names: {sign_in: "login", sign_out: "logout", registration: 'register'}
 
-  root 'welcome#index'
+  root 'home#index'
 
-  #get 'welcome#info'
+  #get 'home#info'
 
-  get 'info', :to => 'welcome#info'
+  get 'info', :to => 'home#info'
 
 # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

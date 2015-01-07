@@ -1,4 +1,4 @@
-class WelcomeController < ApplicationController
+class HomeController < ApplicationController
   #before_filter :authenticate_user!
 
   # main screen with random cyte

@@ -1,4 +1,4 @@
-module WelcomeHelper
+module HomeHelper
   def resource_name
     :user
   end
