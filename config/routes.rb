@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   resources :cyte_categories
 
+  get 'search', to: 'search#search'
 end

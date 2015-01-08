@@ -37,6 +37,9 @@ gem 'rails_admin'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
 group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
