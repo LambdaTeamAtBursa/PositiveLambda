@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :cytes
+  
   namespace :admin do
     get 'moderator/index'
   end
