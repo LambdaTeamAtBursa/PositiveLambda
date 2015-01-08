@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   # attr_accessible :role_ids, :as => :admin
   # attr_accessible :name, :email, :password, :password_confirmation
 
+  extend Enumerize
+  enumerize :role, in: {user:1, admin:2}, default: :user
 end

@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(email: "go@further.always",password: "freedom123",reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1,role: nil,name: "Roman",shown_name: nil)
-User.create!(email: "admin_go@further.always",password: "freedom123",reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1,role: nil,name: "Roman",shown_name: nil)
+User.create!(email: "go@further.always",password: "freedom123",role: 1,name: "Roman",shown_name: "Roman")
+User.create!(email: "admin_go@further.always",password: "freedom123",role: 2,name: "Admin",shown_name: "Admin")
 
 %Q[Если на вопрос никто не знает ответа, то пора читать описание.
 Хотите меньше работать наймите хорошего программиста.
@@ -19,4 +19,3 @@ User.create!(email: "admin_go@further.always",password: "freedom123",reset_passw
 Кто как программирует, тот так и ест.
 Админ спит - трафик идет...
 Кому и командная строка - дружественный интерфейс.].split("\n").each{ |cyte| Cyte.create(text: cyte, creator_id: 1) }
-
