@@ -1,0 +1,18 @@
+= will_paginate @cyte_categories, renderer: BootstrapPagination::Rails
+table.table
+  thead
+    tr
+      th= CyteCategory.name
+      th= "Parent Category"
+      th Actions
+  tbody
+    - @cyte_categories.each do |c|
+      tr
+        td= link_to c.name, cyte_category_path(c)
+        td= c.parent_category.name if c.parent_category !=nil
+        td
+          = link_to 'Edit', edit_cyte_category_path(c)
+          | |
+          = link_to 'delete', cyte_category_path(c), method: :delete, data: { confirm: 'sure?' }
+= link_to 'New', new_cyte_category_path, class: 'btn btn-default pull-right'
+= will_paginate @cyte_categories, renderer: BootstrapPagination::Rails
