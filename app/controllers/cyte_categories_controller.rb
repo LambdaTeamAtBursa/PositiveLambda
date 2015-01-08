@@ -2,7 +2,7 @@ class CyteCategoriesController < ApplicationController
   before_action :find_cyte_category, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cyte_categories = CyteCategory.all
+    @cyte_categories = CyteCategory.paginate(:page => params[:page], :per_page => 30)
   end
 
   def show

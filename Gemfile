@@ -34,6 +34,9 @@ gem 'slim-rails'
 gem 'enumerize'
 gem 'rails_admin'
 
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
 group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
