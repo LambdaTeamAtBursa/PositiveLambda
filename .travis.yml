@@ -1,7 +1,14 @@
 language: ruby
 rvm:
- - 2.1.5
-
+- 2.1.5
 before_script:
- - psql -c 'create database travis_ci_test;' -U postgres
- - cp config/database.yml.travis config/database.yml
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: k7kupE0ZwNMjEl1TcaPQtt3NQhKZX5UXn+eTjieoMu69aNk1FBbUVV1j+y5yPAUhGjpWm5sh5qBzaxoqLS50wQniwKpT4PF1xouBq4XbPIdELSSnCpE9ku3Q4f0iy1SdQ/Hz5t2oVgu0uHaUES0G9O6lwQQjGzlvE3ivxywnSCA=
+  app: positivelambda
+  on:
+    repo: LambdaTeamAtBursa/PositiveLambda
+    branch: develop

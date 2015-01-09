@@ -23,10 +23,44 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+gem 'devise'
+gem 'cancancan'
+gem 'simple_form'
 
-gem 'rails_12factor', group: :production
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'slim-rails'
+
+gem 'enumerize'
+gem 'rails_admin'
+
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
+group :test do
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'webmock'
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
+
+group :development do
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  gem 'rails_layout'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
+group :production do
+  #gem 'rails_serve_static_assets'
+  gem 'rails_12factor'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -39,16 +73,3 @@ gem 'rails_12factor', group: :production
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-group :test do
-  gem 'rspec-rails'
-  gem 'database_cleaner'
-  gem 'shoulda-matchers'
-  gem 'webmock'
-  gem 'factory_girl_rails'
-  gem 'faker'
-end
-
-gem 'devise'
-gem 'cancancan'
-gem 'simple_form'

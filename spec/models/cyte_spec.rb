@@ -12,5 +12,3 @@ require 'rails_helper'
      it { is_expected.to have_many(:tags) }
 
   end
-
-

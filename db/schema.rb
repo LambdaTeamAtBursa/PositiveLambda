@@ -49,15 +49,20 @@ ActiveRecord::Schema.define(version: 20141225102109) do
   add_index "cytes", ["category_id"], name: "index_cytes_on_category_id", using: :btree
   add_index "cytes", ["creator_id"], name: "index_cytes_on_creator_id", using: :btree
 
+  create_table "cytes_tags", id: false, force: true do |t|
+    t.integer "cyte_id", null: false
+    t.integer "tag_id",  null: false
+  end
+
+  create_table "tag_cytes", id: false, force: true do |t|
+    t.integer "tag_id",  null: false
+    t.integer "cyte_id", null: false
+  end
+
   create_table "tags", force: true do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "tags_cytes", id: false, force: true do |t|
-    t.integer "tag_id",  null: false
-    t.integer "cyte_id", null: false
   end
 
   create_table "users", force: true do |t|

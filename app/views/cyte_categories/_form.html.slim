@@ -1,0 +1,8 @@
+= simple_form_for @cyte_category, html: {class:'form-horizontal'}, wrapper: :horizontal_form do |f|
+  = f.error_notification
+  /.form-group
+  = f.input :name, class: 'form-control'
+  /.form-group
+  = f.simple_fields_for :parent_category do |parent|
+    = parent.input :name, class: 'form-control', label: 'Parent Category'
+  = f.submit :class => 'btn btn-default pull-right'
