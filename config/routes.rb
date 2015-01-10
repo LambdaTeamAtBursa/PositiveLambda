@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'info', :to => 'home#info'
 
   resources :cyte_categories
+  resources :tags
 
   get 'search', to: 'search#search'
 end
