@@ -1,0 +1,16 @@
+= will_paginate @tags, renderer: BootstrapPagination::Rails
+table.table
+  thead
+    tr
+      th= Tag.name
+      th Actions
+  tbody
+    - @tags.each do |p|
+      tr
+        td= link_to p.name, tag_path(p)
+        td
+          = link_to 'Edit', edit_tag_path(p)
+          | |
+          = link_to 'Delete', tag_path(p), method: :delete, data: { confirm: 'Sure?'}
+= link_to 'New', new_tag_path, class: 'btn btn-default pull-right'
+= will_paginate @tags, renderer: BootstrapPagination::Rails
