@@ -5,7 +5,7 @@ RSpec.describe HomeController, :type => :controller do
   describe "GET index" do
 
     let(:user) { FactoryGirl.create(:user) }
-    subject { FactoryGirl.create(:cyte) }
+    load Rails.root.join('db','seeds.db')
 
     before do
       sign_in user
