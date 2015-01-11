@@ -5,6 +5,7 @@ RSpec.describe HomeController, :type => :controller do
   describe "GET index" do
 
     let(:user) { FactoryGirl.create(:user) }
+    subject { FactoryGirl.create(:cyte) }
 
     before do
       sign_in user

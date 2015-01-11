@@ -87,12 +87,12 @@ RSpec.describe CytesController, :type => :controller do
       context "with valid attributes" do
         it "updates object" do
           expect{
-            post :update, id: subject, cyte: { name: 'new' }
-          }.to change{ subject.reload.name }.to('new')
+            post :update, id: subject, cyte: { text: 'new' }
+          }.to change{ subject.reload.text }.to('new')
         end
 
         it "redirects to index path" do
-          post :update, id: subject, cyte: { name: 'new' }
+          post :update, id: subject, cyte: { text: 'new' }
           expect(response).to redirect_to cytes_path
         end
       end
@@ -104,7 +104,7 @@ RSpec.describe CytesController, :type => :controller do
       it "deletes the cyte" do
         expect {
           delete :destroy, id: @cyte
-        }.to change(CyteCategory, :count).by(-1)
+        }.to change(Cyte, :count).by(-1)
       end
 
       it "redirects to cytes#index" do
