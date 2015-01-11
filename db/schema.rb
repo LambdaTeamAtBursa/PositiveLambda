@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141225102109) do
     t.text "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
 
   add_index "comments", ["cyte_id"], name: "index_comments_on_cyte_id", using: :btree
   add_index "comments", ["parent_comment_id"], name: "index_comments_on_parent_comment_id", using: :btree
