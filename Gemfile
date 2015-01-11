@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.1.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use postgresql as the database for Active Record
@@ -40,6 +40,8 @@ gem 'will_paginate-bootstrap'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
+gem 'rails_layout'
+
 group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
@@ -52,12 +54,12 @@ end
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'rails_layout'
   gem 'better_errors'
   gem 'binding_of_caller'
 end
 
 group :production do
+  #gem 'rails_serve_static_assets'
   gem 'rails_12factor'
 end
 

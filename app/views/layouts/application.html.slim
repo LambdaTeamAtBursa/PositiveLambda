@@ -15,31 +15,26 @@ html
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        a.navbar-brand href="#"  Positive Lambda
+        = link_to 'Positive Lambda', '#', class: 'navbar-brand'
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav
-          li class=(current_page?(controller: '/home', action: 'info')?'active':'')
-            a href="/info"  About
+          li class=(current_page?(controller: '/home', action: 'info') ? 'active' : '' )
+            =link_to 'About', '/info'
           li
-            a href="/cyte_categories"  Categories
+            =link_to 'Categories', '/cyte_categories'
           li
             = link_to 'Category search', search_path
-        /form.navbar-form.navbar-left role="search"
-        /  .form-group
-        /    input.form-control type="text" placeholder="Input text for search" /
-        /  button.btn.btn-default type="submit" Search
         ul.nav.navbar-nav.navbar-right style="margin-right: 15px;"
           - if (user_signed_in?)
             li
-              a href="#"
-                = current_user.email
+              = link_to current_user.email, '#'
             li
               = link_to t("sign_out"), destroy_user_session_path, method: :delete
           - else
             li
               = link_to t("sign_in"), new_user_session_path, method: :get
           li
-            a href="/admin"  Admin
+            = link_to 'Admin', '/admin'
     - if notice
       | p.alert.alert-success
         =notice
@@ -49,8 +44,3 @@ html
 
     .container style="margin-top:90px;"
       = yield
-
-    /footer
-    /  .container
-    /  | Lambda Team 2014
-
