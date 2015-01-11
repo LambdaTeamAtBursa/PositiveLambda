@@ -5,6 +5,8 @@ class CyteCategory < ActiveRecord::Base
   belongs_to :parent_category, class_name: CyteCategory, dependent: :destroy
   accepts_nested_attributes_for :parent_category
 
+  validates :name, presence: true, length: { minimum: 2 }
+
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 end
