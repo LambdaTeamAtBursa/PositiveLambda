@@ -15,7 +15,7 @@ html
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        = link_to 'Positive Lambda', '#', class: 'navbar-brand'
+        = link_to 'Positive Lambda', '/', class: 'navbar-brand'
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav
           li class=(current_page?(controller: '/home', action: 'info') ? 'active' : '' )
@@ -48,5 +48,5 @@ html
       | p.alert.alert-danger
         =alert
 
-    .container style="margin-top:90px;"
+    .container
       = yield
