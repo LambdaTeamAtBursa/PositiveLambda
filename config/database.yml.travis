@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: positive_lambda_test
+  username: postgres
