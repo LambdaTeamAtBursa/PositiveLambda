@@ -21,6 +21,12 @@ html
           li class=(current_page?(controller: '/home', action: 'info') ? 'active' : '' )
             =link_to 'About', '/info'
           li
+            =link_to 'Tags', '/tags'
+          li
+            =link_to 'Cytes', '/cytes'
+          li
+            =link_to 'Comments', '/comments'
+          li
             =link_to 'Categories', '/cyte_categories'
           li
             = link_to 'Category search', search_path

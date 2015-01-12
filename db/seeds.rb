@@ -1,8 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
+require 'faker'
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
@@ -14,6 +10,9 @@ CyteCategory.create!(name: "Category1")
   CyteCategory.create!(name: "Category#{n}", parent_category_id:CyteCategory.take.id)
 end
 
+10.times do |n|
+  Tag.create!(:name => Faker::Lorem.word)
+end
 
 cytes = %Q[Если на вопрос никто не знает ответа, то пора читать описание.
 Хотите меньше работать наймите хорошего программиста.
