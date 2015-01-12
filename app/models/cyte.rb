@@ -3,8 +3,8 @@ class Cyte < ActiveRecord::Base
   belongs_to :category, class_name: CyteCategory
   has_many :tag_cytes, class_name: TagCyte
   has_many :tags, :through => :tag_cytes
+  has_many :comments
   
-  # has_many :comments
   # validates :text, presence: true
 
   
