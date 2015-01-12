@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   # main screen with random cyte
   def index
     @user = User.new
-    @cyte = Cyte.find(1 + (rand Cyte.count).to_i)
+    @cyte = Cyte.first
   end
 
   def info
