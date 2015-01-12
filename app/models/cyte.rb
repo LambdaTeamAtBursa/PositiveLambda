@@ -4,4 +4,8 @@ class Cyte < ActiveRecord::Base
   has_many :tag_cytes, class_name: TagCyte
   has_many :tags, :through => :tag_cytes
   has_many :comments
+  
+  # validates :text, presence: true
+
+  
 end

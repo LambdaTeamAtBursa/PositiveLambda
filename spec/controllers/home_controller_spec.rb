@@ -7,6 +7,7 @@ RSpec.describe HomeController, :type => :controller do
     let(:user) { FactoryGirl.create(:user) }
 
     before do
+      FactoryGirl.create(:cyte) 
       sign_in user
     end
     
