@@ -1,0 +1,15 @@
+h1 All comments 
+table.table
+  thead
+    tr
+      th Comments texts
+      th Actions
+  tbody
+    - @comments.each do |comment|
+      tr
+        td= comment.text
+        td
+          = link_to 'Edit', edit_comment_path(comment)
+          | |
+          = link_to '[x]', comment_path(comment), method: :delete, data: { confirm: 'sure?' }
+= link_to 'New', new_comment_path, class: 'btn'
