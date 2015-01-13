@@ -15,19 +15,19 @@ html
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        = link_to 'Positive Lambda', '/', class: 'navbar-brand'
+        = link_to 'Positive Lambda', root_path, class: 'navbar-brand'
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav
           li class=(current_page?(controller: '/home', action: 'info') ? 'active' : '' )
             =link_to 'About', '/info'
           li
-            =link_to 'Tags', '/tags'
+            =link_to 'Tags', tags_path
           li
-            =link_to 'Cytes', '/cytes'
+            =link_to 'Cytes', cytes_path
           li
-            =link_to 'Comments', '/comments'
+            =link_to 'Comments', comments_path
           li
-            =link_to 'Categories', '/cyte_categories'
+            =link_to 'Categories', cyte_categories_path
           li
             = link_to 'Category search', search_path
         ul.nav.navbar-nav.navbar-right style="margin-right: 15px;"
