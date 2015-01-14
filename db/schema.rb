@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 20141225102109) do
   create_table "comments", force: true do |t|
     t.integer  "user_id"
     t.integer  "cyte_id"
-    t.integer "parent_comment_id"
-    t.text "text", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "parent_comment_id"
+    t.text     "text",              null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   add_index "comments", ["cyte_id"], name: "index_comments_on_cyte_id", using: :btree
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20141225102109) do
   create_table "cyte_categories", force: true do |t|
     t.string   "name"
     t.integer  "parent_category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_index "cyte_categories", ["parent_category_id"], name: "index_cyte_categories_on_parent_category_id", using: :btree
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20141225102109) do
     t.string   "text"
     t.integer  "creator_id"
     t.integer  "category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "cytes", ["category_id"], name: "index_cytes_on_category_id", using: :btree
@@ -77,10 +77,10 @@ ActiveRecord::Schema.define(version: 20141225102109) do
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.integer  "role"
-    t.string   "name", null: false
+    t.string   "name",                                null: false
     t.string   "shown_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
