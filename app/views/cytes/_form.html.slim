@@ -1,0 +1,14 @@
+= simple_form_for @cyte do |f|
+  div.cyte-form
+    = f.input :text
+  div.cyte-form
+    = f.input :category_id
+  div.cyte-form
+    = f.input :creator_id
+  div.cyte-form
+  = f.submit
+  
+  
+p 
+  = link_to 'All citations', cytes_path 
+  

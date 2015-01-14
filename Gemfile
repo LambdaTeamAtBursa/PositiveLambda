@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+gem 'faker', group: [:test, :development, :production]
+
 gem 'devise'
 gem 'cancancan'
 gem 'simple_form'
@@ -48,7 +50,6 @@ group :test do
   gem 'shoulda-matchers'
   gem 'webmock'
   gem 'factory_girl_rails'
-  gem 'faker'
 end
 
 group :development do

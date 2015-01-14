@@ -1,0 +1,15 @@
+h1 All citations 
+table.table
+  thead
+    tr
+      th Citations texts
+      th Actions
+  tbody
+    - @cytes.each do |cyte|
+      tr
+        td= cyte.text
+        td
+          = link_to 'Edit', edit_cyte_path(cyte)
+          | |
+          = link_to '[x]', cyte_path(cyte), method: :delete, data: { confirm: 'sure?' }
+= link_to 'New', new_cyte_path, class: 'btn'
