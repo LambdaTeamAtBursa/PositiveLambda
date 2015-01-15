@@ -1,15 +1,15 @@
-h1 All citations 
+h1 = t('sytes.views.index.title_h1') 
 table.table
   thead
     tr
-      th Citations texts
-      th Actions
+      th = t('sytes.views.index.tab_header_text') 
+      th = t('sytes.views.index.tab_actions')  
   tbody
     - @cytes.each do |cyte|
       tr
         td= cyte.text
         td
-          = link_to 'Edit', edit_cyte_path(cyte)
+          = link_to t('sytes.views.index.tab_edit'), edit_cyte_path(cyte)
           | |
-          = link_to '[x]', cyte_path(cyte), method: :delete, data: { confirm: 'sure?' }
-= link_to 'New', new_cyte_path, class: 'btn'
+          = link_to '[x]', cyte_path(cyte), method: :delete, data: { confirm: t('sytes.views.index.tab_del_confirm') }
+= link_to t('sytes.views.index.new'), new_cyte_path, class: 'btn'

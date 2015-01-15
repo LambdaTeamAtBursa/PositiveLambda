@@ -19,28 +19,33 @@ html
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav
           li class=(current_page?(controller: '/home', action: 'info') ? 'active' : '' )
-            =link_to 'About', '/info'
+            =link_to t('main_menu.about') , '/info'
           li
-            =link_to 'Tags', tags_path
+            =link_to t('main_menu.tags'), tags_path
           li
-            =link_to 'Cytes', cytes_path
+            =link_to t('main_menu.cytes'), cytes_path
           li
-            =link_to 'Comments', comments_path
+            =link_to t('main_menu.comments'), comments_path
           li
-            =link_to 'Categories', cyte_categories_path
+            =link_to t('main_menu.categories'), cyte_categories_path
           li
-            = link_to 'Category search', search_path
+            = link_to t('main_menu.category_search'), search_path
         ul.nav.navbar-nav.navbar-right style="margin-right: 15px;"
+          li
+            - if I18n.locale == :ru
+              = link_to 'EN', setlocale: 'en'
+            - if I18n.locale == :en
+              = link_to 'RU', setlocale: 'ru'                
           - if (user_signed_in?)
             li
               = link_to current_user.email, '#'
             li
-              = link_to t("sign_out"), destroy_user_session_path, method: :delete
+              = link_to t('main_menu.sign_out'), destroy_user_session_path, method: :delete
           - else
             li
-              = link_to t("sign_in"), new_user_session_path, method: :get
+              = link_to t('main_menu.sign_in'), new_user_session_path, method: :get
           li
-            = link_to 'Admin', '/admin'
+            = link_to t('main_menu.admin'), '/admin'
     - if notice
       | p.alert.alert-success
         =notice

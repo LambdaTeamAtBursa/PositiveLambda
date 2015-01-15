@@ -1,0 +1,20 @@
+ru:
+  main_menu:
+    about: 'О проекте'
+    tags: 'Тэги'
+    cytes: 'Цитаты'
+    comments: 'Комментарии'
+    categories: 'Категории'
+    category_search: 'Поиск по категориям'
+    sign_out: 'выход'
+    sign_in:  'вход'
+    admin: 'Админка'
+  sytes:
+    views:
+      index:
+        title_h1: 'Все цитаты'
+        tab_header_text:  Тексты цитат
+        tab_actions:  Действия
+        tab_edit: Редактировать
+        tab_del_confirm: Уверены?
+        new: Новая цитата 
