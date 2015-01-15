@@ -4,7 +4,7 @@ class CytesController < ApplicationController
   before_action :find_citation, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cytes = Cyte.all
+    @cytes = Cyte.paginate(:page => params[:page], :per_page => 30)
   end
 
   def show

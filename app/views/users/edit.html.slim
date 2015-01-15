@@ -1,0 +1,5 @@
+.container.col-md-6.col-md-offset-3
+= simple_form_for @user, html: {class:'form-horizontal'}, wrapper: :horizontal_form do |f|
+  = f.error_notification
+  = f.input :name, class: 'form-control'
+  = f.submit :class => 'btn btn-default pull-right'
