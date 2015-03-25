@@ -45,7 +45,7 @@ class CyteCategoriesController < ApplicationController
   end
 
   def cyte_category_params
-    params.require(:cyte_category).permit(:name)
+    params.require(:cyte_category).permit(:name, :parent_category_id)
   end
 
 

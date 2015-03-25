@@ -33,7 +33,7 @@ html
         ul.nav.navbar-nav.navbar-right style="margin-right: 15px;"
           - if (user_signed_in?)
             li
-              = link_to current_user.email, '#'
+              = link_to current_user.email, user_path(current_user)
             li
               = link_to t("sign_out"), destroy_user_session_path, method: :delete
           - else

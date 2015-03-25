@@ -1,5 +1,14 @@
+h1 User
+table.table
+  tbody
+    tr
+      th= @user.name
+      th= link_to 'Edit user name', edit_user_path(@user)
+    tr
+      th= @user.email
+
 = will_paginate @cytes, renderer: BootstrapPagination::Rails
-h1 All citations 
+h1= "#{@user.name}\'s citations"
 table.table
   thead
     tr
